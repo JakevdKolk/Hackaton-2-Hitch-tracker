@@ -1,0 +1,36 @@
+header {
+    color: #4b5563;
+    background-color: #e5e7eb;
+    padding: 1.5rem;
+    text-align: center;
+    width: calc(100vw - 3.0rem);
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+header p {
+    color: #4b5563;
+    margin-top: 0.25rem;
+}
+
+.options-row {
+    margin-top: 1.5rem;
+    background-color: #fef08a;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
