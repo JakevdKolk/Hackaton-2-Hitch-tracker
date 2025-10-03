@@ -40,3 +40,11 @@
 .read-the-docs {
   color: #888;
 }
+
+
+/* form and route calc */
+
+.route-input{
+  display: flex;
+  height: inherit;
+}
