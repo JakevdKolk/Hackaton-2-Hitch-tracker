@@ -5,6 +5,8 @@ function Routeform() {
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
   const [kmNumber, setKmNumber] = useState(0);
+  const [speedNumber, setSpeedNumber] = useState(0);
+  const [timeInMinutes, setTimeInMinutes] = useState(0);
 
   const handleFromChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFrom(e.target.value);
@@ -22,10 +24,22 @@ function Routeform() {
       return alert("Please fill in a destination.");
     }
 
-    const generatedKm = Math.floor(Math.random() * 20 + 1);
-    setKmNumber(generatedKm);
+    const generatedKm = Math.floor(Math.random() * 20 + 1); 
+    const generatedKmh = Math.floor(Math.random() * 60 + 10); 
 
-    console.log({ From: from, To: to, KM: kmNumber });
+    const routeTime = Math.ceil((generatedKm / generatedKmh) * 60);
+
+    setKmNumber(generatedKm);
+    setSpeedNumber(generatedKmh);
+    setTimeInMinutes(routeTime);
+
+    console.log({
+      From: from,
+      To: to,
+      KM: generatedKm,
+      kmh: generatedKmh,
+      timeInMinutes: routeTime,
+    });
   };
 
   return (
