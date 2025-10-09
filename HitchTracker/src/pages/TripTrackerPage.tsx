@@ -1,8 +1,10 @@
+import Routeform from "../components/Routeform";
+
 export default function TripTrackerPage() {
   return (
-    <div style={{ padding: '2rem' }}>
-      <h2>Trip Tracker</h2>
-      <p>Hier komt de Trip Tracker functionaliteit.</p>
+    <div className="trip-tracker">
+      <h2>Route Instelling</h2>
+      <Routeform />
     </div>
   );
 }

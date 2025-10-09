@@ -24,8 +24,8 @@ function Routeform() {
       return alert("Please fill in a destination.");
     }
 
-    const generatedKm = Math.floor(Math.random() * 20 + 1); 
-    const generatedKmh = Math.floor(Math.random() * 60 + 10); 
+    const generatedKm = Math.floor(Math.random() * 20 + 1);
+    const generatedKmh = Math.floor(Math.random() * 60 + 10);
 
     const routeTime = Math.ceil((generatedKm / generatedKmh) * 60);
 
@@ -43,10 +43,26 @@ function Routeform() {
   };
 
   return (
-    <form className="route-input">
-      <InputBox name="From" value={from} onChange={handleFromChange} />
-      <InputBox name="To" value={to} onChange={handleToChange} />
-      <input type="button" value="Plan Route" onClick={handleClick} />
+    <form className="route-input" className="route-form">
+      <InputBox
+        name="Vertreklocatie"
+        value={from}
+        onChange={handleFromChange}
+      />
+      <InputBox
+        name="Bestemminglocatie "
+        value={to}
+        onChange={handleToChange}
+      />
+      <section>
+        <input
+          className="confirm-button"
+          type="button"
+          value="Bevestigen"
+          onClick={handleClick}
+        />
+        <input className="cancel-button" type="button" value="Annuleren" />
+      </section>
     </form>
   );
 }
