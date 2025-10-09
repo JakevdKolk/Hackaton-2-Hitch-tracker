@@ -76,12 +76,13 @@ button:focus-visible {
   border-radius: 10px;
 }
 
-#wrapper *{
- display: flex;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
+#wrapper *:not(label) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
+
 
 
 #price button {
