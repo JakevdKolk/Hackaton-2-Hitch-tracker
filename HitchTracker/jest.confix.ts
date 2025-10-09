@@ -3,16 +3,14 @@ import type { Config } from 'jest';
 const config: Config = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
+  roots: ['<rootDir>/tests'],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
-  transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest',
-  },
   globals: {
     'ts-jest': {
-      tsconfig: 'tsconfig.app.json',
+      tsconfig: '<rootDir>/tsconfig.jest.json',
     },
   },
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
 };
 
 export default config;

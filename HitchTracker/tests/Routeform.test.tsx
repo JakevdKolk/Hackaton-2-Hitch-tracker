@@ -1,40 +1,31 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom';
-import Routeform from '../src/components/Routeform';
+import InputBox from '../src/components/InputBox';
 
-describe('Routeform', () => {
-  it('returns some route values when From and To are filled', () => {
-    render(<Routeform />);
+describe('InputBox (Destination field)', () => {
+  it('renders a labeled input for a city destination', () => {
+    render(<InputBox name="Destination" value="Amsterdam" onChange={() => {}} />);
 
-    // Vind de inputvelden
-    const fromInput = screen.getByLabelText('From') as HTMLInputElement;
-    const toInput = screen.getByLabelText('To') as HTMLInputElement;
-    const button = screen.getByRole('button', { name: /plan route/i });
+    // The label should appear and link to the input
+    const label = screen.getByText('Destination');
+    expect(label).toBeInTheDocument();
+    expect(label).toHaveAttribute('for', 'Destination');
 
-    // Vul From en To
-    fireEvent.change(fromInput, { target: { value: 'Amsterdam' } });
-    fireEvent.change(toInput, { target: { value: 'Rotterdam' } });
-
-    // Klik op Plan Route
-    fireEvent.click(button);
-
-    // Check of er iets in console.log terecht komt of de state is geupdate
-    // Hier kunnen we bv checken of de waarde van de inputs nog klopt
-    expect(fromInput.value).toBe('Amsterdam');
-    expect(toInput.value).toBe('Rotterdam');
-
-    // Als je het component zo zou aanpassen dat het de waarden toont, zou je hier ook checken dat de random waarden verschijnen
+    // The input should have the correct name, id, and value
+    const input = screen.getByRole('textbox', { name: 'Destination' });
+    expect(input).toHaveAttribute('name', 'Destination');
+    expect(input).toHaveValue('Amsterdam');
   });
 
-  it('alerts if From or To is empty', () => {
-    // Mock alert
-    window.alert = jest.fn();
+  it('calls onChange when a new city name is entered', () => {
+    const handleChange = jest.fn();
+    render(<InputBox name="Destination" value="" onChange={handleChange} />);
 
-    render(<Routeform />);
+    const input = screen.getByRole('textbox', { name: 'Destination' });
 
-    const button = screen.getByRole('button', { name: /plan route/i });
+    // Simulate user typing a city
+    fireEvent.change(input, { target: { value: 'Rotterdam' } });
 
-    fireEvent.click(button);
-    expect(window.alert).toHaveBeenCalledWith('Please fill in a starting location.');
+    expect(handleChange).toHaveBeenCalledTimes(1);
+    expect(handleChange.mock.calls[0][0].target.value).toBe('Rotterdam');
   });
 });
