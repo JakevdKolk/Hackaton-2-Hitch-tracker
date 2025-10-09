@@ -27,3 +27,15 @@ npm ci
 ```bash
 npm run dev
 ```
+
+# Hoe test je
+
+als je nog niet in de hitchtracker directory zit run:
+
+```bash
+cd .\HitchTracker\
+```
+
+```bash
+npm test
+```
