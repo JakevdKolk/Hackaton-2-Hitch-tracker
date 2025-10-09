@@ -1,14 +1,19 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTaxi, faComments, faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faTaxi,
+  faCalendarAlt,
+  faHome,
+} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import './header.css'
+import "./header.css";
 
 export default function Header() {
   return (
     <header>
       <h1>Hitchhiker</h1>
       <p>
-        Innovatieve taxi-service oplossing met real-time tracking, communicatie en planning
+        Innovatieve taxi-service oplossing met real-time tracking, communicatie
+        en planning
       </p>
 
       <div className="options-row">
@@ -16,8 +21,8 @@ export default function Header() {
           <FontAwesomeIcon icon={faTaxi} /> <span>Trip Tracker</span>
         </Link>
 
-        <Link to="/communicatie" className="option">
-          <FontAwesomeIcon icon={faComments} /> <span>Communicatie</span>
+        <Link to="/" className="option">
+          <FontAwesomeIcon icon={faHome} /> <span>Home</span>
         </Link>
 
         <Link to="/planning" className="option">
