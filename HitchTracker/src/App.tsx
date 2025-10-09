@@ -1,17 +1,17 @@
-import { Routes, Route } from 'react-router-dom';
-import Header from './header';
-import TripTrackerPage from './pages/TripTrackerPage';
-import CommunicatiePage from './pages/CommunicatiePage';
-import PlanningPage from './pages/PlanningPage';
-import './App.css'
+import { Routes, Route } from "react-router-dom";
+import Header from "./header";
+import TripTrackerPage from "./pages/TripTrackerPage";
+import PlanningPage from "./pages/PlanningPage";
+import HomePage from "./pages/HomePage";
+import "./App.css";
 
-function App() {  
+function App() {
   return (
     <>
       <Header />
       <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route path="/trip-tracker" element={<TripTrackerPage />} />
-        <Route path="/communicatie" element={<CommunicatiePage />} />
         <Route path="/planning" element={<PlanningPage />} />
       </Routes>
     </>

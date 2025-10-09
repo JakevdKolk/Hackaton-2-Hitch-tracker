@@ -4,6 +4,7 @@ header {
     padding: 1.5rem;
     text-align: center;
     width: calc(100vw - 3.0rem);
+    height: 20%;
     
     position: fixed;
     top: 0;
