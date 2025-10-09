@@ -26,7 +26,7 @@ export default function PriceCalculator({ kmNumber, timeInMinutes }: PriceCalcul
 
   return (
     <div id="price" className={kmNumber === 0 ? "faded" : ""}>
-      <h3>Trip Summary</h3>
+      <h3 id="holder">Trip Summary</h3>
 
       <div id="flexbox">
         <div id="wrapper">
@@ -86,7 +86,12 @@ export default function PriceCalculator({ kmNumber, timeInMinutes }: PriceCalcul
             </label>
       </div>
 
-      <p>Total Price: €{totalPrice.toFixed(2)}</p>
+    <div id="center">
+      <div id="holder">
+        <p id="center">Total Price: </p>
+        <p id="display">€{totalPrice.toFixed(2)}</p>
+      </div>
+    </div>    
 
       <button type="button" onClick={handleConfirm}>
         Calculate Prices

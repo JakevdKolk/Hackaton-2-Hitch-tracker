@@ -59,6 +59,7 @@ button:focus-visible {
 }
 
 #price {
+  width: 30vw;
   margin-top: 1rem;
   padding: 1rem;
   border: 1px solid #ccc;
@@ -79,9 +80,21 @@ button:focus-visible {
   margin: 0.2rem;
 }
 
+#center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
 #display{
   border: 1px solid #b4b4b4;
+  
   border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 #wrapper *:not(label) {
@@ -91,52 +104,11 @@ button:focus-visible {
   align-content: center;
 }
 
-
-
 #price button {
   display: block;
   margin-top: 0.5rem;
-.page-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 }
 
-/* route form */
-.confirm-button {
-  background-color: black;
-  color: white;
-}
-
-input[type="button"] {
-  border-radius: 20%;
-}
-
-.route-form {
-  width: 90%;
-  height: 20%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-.trip-tracker {
-  margin-top: 2%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: inherit;
-  height: inherit;
-}
-.route-form section {
-  height: inherit;
-  width: inherit;
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.route-form section button {
-  width: 75%;
-  height: 75%;
+#holder{
+  width: 10vw;
 }
