@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Routeform from "../components/Routeform";
 import PriceCalculator from "../components/PriceCalculator";
+import Bar from "../components/Bar";
 
 export default function TripTrackerPage() {
   const [from, setFrom] = useState("");
@@ -22,6 +23,8 @@ export default function TripTrackerPage() {
         setSpeedNumber={setSpeedNumber}
         setTimeInMinutes={setTimeInMinutes}
       />
+      <Bar speed={speedNumber} />
+      
 
       <PriceCalculator
         kmNumber={kmNumber}

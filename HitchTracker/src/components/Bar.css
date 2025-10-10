@@ -1,0 +1,46 @@
+.progress-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center horizontally */
+  justify-content: center; /* center vertically (optional) */
+  gap: 8px;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px ; /* centers container */
+}
+
+/* Header layout for icon + title */
+.progress-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.progress-icon {
+  color: black; /* or #007bff if you want blue */
+  font-size: 1.5rem;
+}
+
+.progress-bar {
+  height: 24px;
+  background: #b3b3b3;
+  border-radius: 9999px;
+  overflow: hidden;
+  width: 60vw; /* takes up 60% of viewport width */
+  margin: 0 auto; /* centers horizontally */
+}
+
+.progress-fill {
+  height: 100%;
+  background: black;
+  border-radius: 9999px;
+  transition: width 0.4s ease;
+}
+
+.progress-label {
+  font-size: 0.9rem;
+  color: #333;
+  text-align: center; /* centers the label under the bar */
+  width: 100%;
+}
