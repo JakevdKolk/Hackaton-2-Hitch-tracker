@@ -1,12 +1,13 @@
 .progress-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center; /* center horizontally */
+  justify-content: center; /* center vertically (optional) */
   gap: 8px;
   font-family: Arial, sans-serif;
   width: 100%;
   max-width: 600px;
-  margin: 20px auto;
+  margin: 20px ; /* centers container */
 }
 
 /* Header layout for icon + title */
@@ -26,8 +27,7 @@
   background: #b3b3b3;
   border-radius: 9999px;
   overflow: hidden;
-  min-width: 60vw;
-  width: 100%;
+  width: 60vw; /* takes up 60% of viewport width */
   margin: 0 auto; /* centers horizontally */
 }
 
@@ -39,8 +39,8 @@
 }
 
 .progress-label {
-  align-self: flex-end;
   font-size: 0.9rem;
   color: #333;
-  margin-right: 4px;
+  text-align: center; /* centers the label under the bar */
+  width: 100%;
 }
