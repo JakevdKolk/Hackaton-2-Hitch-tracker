@@ -19,8 +19,8 @@ export default function Routeform({
     if (!from.trim()) return alert("Please fill in a starting location.");
     if (!to.trim()) return alert("Please fill in a destination.");
 
-    const generatedKm = Math.floor(Math.random() * 20 + 1);
-    const generatedKmh = Math.floor(Math.random() * 60 + 10);
+    const generatedKm = Math.floor(Math.random() * 100 + 1);
+    const generatedKmh = Math.floor(Math.random() * 120 + 10);
     const routeTime = Math.ceil((generatedKm / generatedKmh) * 60);
 
     setKmNumber(generatedKm);
